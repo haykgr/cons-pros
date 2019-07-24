@@ -1,13 +1,95 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+div {
+  box-sizing: border-box;
+}
+.table-container {
+  display: block;
+  margin: 2em auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 500px;
+  overflow-x: hidden; 
+  overflow-y: auto 
+}
+.flag-icon {
+  margin-right: 0.1em;
+}
+.flex-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50%);
+  grid-template-rows: 100% auto;
+  border-left: solid 1px #d9d9d9;
+  transition: 0.5s;
+}
+.flex-table:first-of-type {
+  border-top: solid 1px #1565c0;
+  border-left: solid 1px #1565c0;
+}
+.header {
+  background: rgb(82, 86, 89);
+  padding: 20px 30px;
+  text-align: center;
+  color: white;
+  border-color: #1565c0;
+  font-size: 25px;
+}
+.flex-row {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0.5em;
+  border-right: solid 1px #d9d9d9;
+  border-bottom: solid 1px #d9d9d9;
+}
+.rowspan {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 100%;
+}
+.column {
+  width: 100%;
+  padding: 0;
+}
+.flex-cell {
+  text-align: center;
+  padding: 0.5em 0.5em;
+  border-right: solid 1px #d9d9d9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
+
 }
+.inp input {
+  border: 0;
+  height: 32px;
+  background: none;
+  border-radius: 0;
+
+}
+
+.pros-list, .cons-list {
+  margin: 0 0 1.5em;
+  padding: 0;
+  counter-reset: item;
+}
+
+.cons-list > li, .pros-list > li {
+  margin: 0;
+  padding: 0 0 0 2em;
+  text-indent: -2em;
+  list-style-type: none;
+  counter-increment: item;
+}
+
+.cons-list > li:before, .pros-list > li:before {
+  display: inline-block;
+  width: 1em;
+  padding-right: 0.5em;
+  font-weight: bold;
+  text-align: right;
+  content: counter(item) ".";
+}
+
